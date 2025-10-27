@@ -17,6 +17,7 @@
 package com.alibaba.nacos.plugin.encryption.handler;
 
 import com.alibaba.nacos.common.utils.Pair;
+import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.plugin.encryption.EncryptionPluginManager;
 import com.alibaba.nacos.plugin.encryption.spi.EncryptionPluginService;
 import org.slf4j.Logger;
@@ -48,7 +49,7 @@ public class EncryptionHandler {
      */
     public static Pair<String, String> encryptHandler(String dataId, String content) {
         if (!checkCipher(dataId)) {
-            return Pair.with("", content);
+            return Pair.with(StringUtils.EMPTY_NULL, content);
         }
         Optional<String> algorithmName = parseAlgorithmName(dataId);
         Optional<EncryptionPluginService> optional = algorithmName.flatMap(
