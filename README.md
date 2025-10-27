@@ -1,2 +1,7 @@
 # ashgod-nacos
-nacos with multiple data sources
+适配多数据源的nacos
+
+| nacos版本 | kingbase | dm   |
+| --------- | -------- | ---- |
+| 2.3.1     |          |      |
+
